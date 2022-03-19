@@ -11,7 +11,7 @@ const getCityInformationData = async (cityName) => {
   const response = await (await fetch(baseUrl)).json();
   return response[0];
 };
-getCityInformationData("esfahan")
-  .then((data) => getWeatherInformationData(data.Key))
-  .then((data) => console.log(data))
-  .catch((error) => console.error(error));
+// getCityInformationData("esfahan")
+//   .then((data) => getWeatherInformationData(data.Key))
+//   .then((data) => console.log(data))
+//   .catch((error) => console.error(error));
