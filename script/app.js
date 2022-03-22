@@ -1,9 +1,10 @@
+// !Get Element With QuerySelector
 const cityForm = document.querySelector("form");
 const card = document.querySelector(".card");
 const details = document.querySelector(".details");
 const time = document.querySelector("img.time");
 const icon = document.querySelector(".icon img");
-
+// !Function For Update UI Data
 const updateUI = (data) => {
   const { cityDetails, weatherDetails } = data;
 
@@ -26,19 +27,19 @@ const updateUI = (data) => {
 
   card.classList.contains("d-none") && card.classList.remove("d-none");
 };
-
-const updateCityCard = async (cityName) => {
+// !Get Data From forecast.js File
+const getDataUpdateCityCard = async (cityName) => {
   const cityDetails = await getCityInformationData(cityName);
   const weatherDetails = await getWeatherInformationData(cityDetails.Key);
-
   return { cityDetails, weatherDetails };
 };
-
+// !Add Submit Event Listener To Form
 cityForm.addEventListener("submit", (evt) => {
+  // !Disable Default
   evt.preventDefault();
   const cityName = cityForm.city.value.trim();
   cityForm.reset();
-  updateCityCard(cityName)
+  getDataUpdateCityCard(cityName)
     .then((data) => updateUI(data))
     .catch((error) => console.error(error));
 });

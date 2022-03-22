@@ -16,23 +16,29 @@
     <link rel="stylesheet" href="./CSS/style.css" />
   </head>
   <body>
+    <!-- app container -->
     <main class="container my-5 mx-auto">
+      <!-- app title -->
       <h1 class="text-muted text-center my-4">Weather App</h1>
+      <!-- get location name -->
       <form class="change-location my-4 text-center text-muted">
-        <label for="city" class="mb-2"
-          >Enter a location for get weather information</label
+        <label for="city" class="mb-2">
+          Enter a location for get weather information</label
         >
         <input type="text" name="city" class="form-control p-4" />
       </form>
-
+      <!-- container for image and icon -->
       <aside class="card shadow-lg rounded d-none">
+        <!-- image to show the status of the day -->
         <img
           src="https://via.placeholder.com/400x300"
           class="time card-imp-top"
         />
+        <!-- image to show the status of the weather -->
         <div class="icon bg-light mx-auto text-center">
           <img src="" alt="" />
         </div>
+        <!-- container to show the details weather -->
         <div class="text-muted text-uppercase text-center details">
           <h5 class="my-3">City name</h5>
           <div class="my-3">Weather condition</div>
